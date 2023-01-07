@@ -4,6 +4,13 @@
     font-size: 30px;
     color: rgb(43, 43, 209);
 }
+
+.present-today {
+    margin: 18px 0;
+    color: rgb(43, 43, 209);
+    font-size: 20px;
+}
+
 .form-container {
     box-sizing: content-box;
 }

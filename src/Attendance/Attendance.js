@@ -37,9 +37,15 @@ const Attendance = () => {
         setSameRoll(false);
     };
 
+    const currentStudent = studentList.filter((item) => item.status === "P");
+
     return (
         <>
             <div className="top-heading">Attendance: Class XIA</div>
+            <div className="present-today">
+                Present Today :{currentStudent.length}/ {studentList.length}
+            </div>
+
             {/* display below message if same roll no. exist */}
             {sameRoll && <div>Same Roll No. already exist</div>}
             <div className="form-container">

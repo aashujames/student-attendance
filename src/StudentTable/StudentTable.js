@@ -10,7 +10,7 @@ const StudentTable = ({ studentList }) => {
                     <th className="roll">Roll No.</th>
                     <th className="in">CheckIn Time</th>
                     <th className="out">CheckOut Time</th>
-                    <th>Status</th>
+                    <th className="status">Status</th>
                 </tr>
                 {studentList.map((item) => {
                     return (
