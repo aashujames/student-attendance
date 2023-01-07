@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import StudentTable from "../StudentTable/StudentTable";
 import "../styles/Attendance.css";
 
 const Attendance = () => {
@@ -143,6 +144,10 @@ const Attendance = () => {
                     </div>
                 </form>
             </div>
+            <StudentTable
+                studentList={studentList}
+                setStudentList={setStudentList}
+            />
         </>
     );
 };

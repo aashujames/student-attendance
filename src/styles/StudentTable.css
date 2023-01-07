@@ -1,0 +1,30 @@
+.main {
+    width: 100%;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.name {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 45%;
+}
+
+.roll {
+    width: 18%;
+    padding-left: 10px;
+}
+
+.in {
+    width: 16%;
+    padding-left: 10px;
+}
+
+.out {
+    width: 16%;
+    padding-left: 10px;
+}
