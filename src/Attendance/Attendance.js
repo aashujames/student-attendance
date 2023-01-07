@@ -37,82 +37,113 @@ const Attendance = () => {
     };
 
     return (
-        <div>
+        <>
             <div className="top-heading">Attendance: Class XIA</div>
+            {/* display below message if same roll no. exist */}
             {sameRoll && <div>Same Roll No. already exist</div>}
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        required
-                        value={student.name}
-                        onChange={(e) =>
-                            setStudent({ ...student, name: e.target.value })
-                        }
-                    />
-                    <input
-                        type="number"
-                        placeholder="Roll No."
-                        required
-                        value={student.roll}
-                        onChange={(e) =>
-                            setStudent({ ...student, roll: e.target.value })
-                        }
-                    />
-                    <div>
-                        <div>Checkin Time</div>
+                    <div className="input1">
                         <input
-                            type="time"
-                            value={student.inTime}
+                            className="name-input"
+                            type="text"
+                            placeholder="Name"
+                            required
+                            value={student.name}
                             onChange={(e) =>
-                                setStudent({
-                                    ...student,
-                                    inTime: e.target.value
-                                })
+                                setStudent({ ...student, name: e.target.value })
                             }
                         />
-                    </div>
-                    <div>
-                        <div>Checkout Time</div>
                         <input
-                            type="time"
-                            value={student.outTime}
+                            className="roll-input"
+                            type="number"
+                            placeholder="Roll No."
+                            required
+                            value={student.roll}
                             onChange={(e) =>
-                                setStudent({
-                                    ...student,
-                                    outTime: e.target.value
-                                })
+                                setStudent({ ...student, roll: e.target.value })
                             }
                         />
+                        <div className="check-main">
+                            <div>Checkin Time</div>
+                            <input
+                                className="check-input"
+                                type="time"
+                                value={student.inTime}
+                                onChange={(e) =>
+                                    setStudent({
+                                        ...student,
+                                        inTime: e.target.value
+                                    })
+                                }
+                            />
+                        </div>
+                        <div className="check-main">
+                            <div>Checkout Time</div>
+                            <input
+                                className="check-input"
+                                type="time"
+                                value={student.outTime}
+                                onChange={(e) =>
+                                    setStudent({
+                                        ...student,
+                                        outTime: e.target.value
+                                    })
+                                }
+                            />
+                        </div>
                     </div>
-                    <input
-                        type="radio"
-                        id="P"
-                        value="P"
-                        onChange={(e) =>
-                            setStudent({ ...student, status: e.target.value })
-                        }
-                        checked={student.status === "P"}
-                    />
-                    <label htmlFor="P">P</label>
-                    <input
-                        type="radio"
-                        id="A"
-                        value="A"
-                        onChange={(e) =>
-                            setStudent({ ...student, status: e.target.value })
-                        }
-                        checked={student.status === "A"}
-                    />
-                    <label htmlFor="A">A</label>
-                    <button type="submit">Take Attendance</button>
-                    <button type="reset" onClick={handleCancel}>
-                        Cancel
-                    </button>
+                    <div className="input2">
+                        <div>
+                            <input
+                                className="input-radio"
+                                type="radio"
+                                id="P"
+                                value="P"
+                                onChange={(e) =>
+                                    setStudent({
+                                        ...student,
+                                        status: e.target.value
+                                    })
+                                }
+                                checked={student.status === "P"}
+                            />
+                            <label className="P" htmlFor="P">
+                                P
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                className="input-radio"
+                                type="radio"
+                                id="A"
+                                value="A"
+                                onChange={(e) =>
+                                    setStudent({
+                                        ...student,
+                                        status: e.target.value
+                                    })
+                                }
+                                checked={student.status === "A"}
+                            />
+                            <label className="A" htmlFor="A">
+                                A
+                            </label>
+                        </div>
+                        <button className="btn-confirm" type="submit">
+                            Take Attendance
+                        </button>
+                        <button
+                            className="btn-reset"
+                            type="reset"
+                            onClick={handleCancel}
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </form>
             </div>
-        </div>
+        </>
     );
 };
 

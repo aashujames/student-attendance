@@ -1,7 +1,94 @@
 .top-heading {
     margin: 20px 0;
+    font-weight: 700;
+    font-size: 30px;
+    color: rgb(43, 43, 209);
 }
 .form-container {
+    box-sizing: content-box;
+}
+
+.input1 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.name-input {
+    height: 2em;
+    width: 24%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.roll-input {
+    height: 2em;
+    width: 10%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.check-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-input {
+    height: 1.2em;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.input2 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.input-radio {
+    margin-right: 10px;
+}
+
+.P {
+    background-color: rgb(54, 213, 54);
+    width: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 12px;
+    color: rgb(29, 36, 90);
+}
+
+.A {
+    background-color: rgb(243, 87, 49);
+    width: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 12px;
+    color: rgb(29, 36, 90);
+}
+
+.btn-confirm {
+    height: 2.2em;
+    width: 15%;
+    color: white;
+    background-color: rgb(43, 43, 209);
+    cursor: pointer;
+}
+
+.btn-confirm:active {
+    transition: all 500ms ease-in;
+    transform: scale(0.7);
+}
+
+.btn-reset {
+    height: 2.2em;
+    width: 9%;
+    color: white;
+    background-color: rgb(43, 43, 209);
+    cursor: pointer;
+}
+
+.btn-reset:active {
+    transition: all 500ms ease-in;
+    transform: scale(0.7);
 }
