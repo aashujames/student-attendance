@@ -1,0 +1,7 @@
+.top-heading {
+    margin: 20px 0;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
