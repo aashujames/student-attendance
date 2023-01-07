@@ -6,21 +6,40 @@ const Attendance = () => {
         name: "",
         roll: "",
         inTime: "00:00",
-        outTime: "00:00"
+        outTime: "00:00",
+        status: ""
     });
     const [studentList, setStudentList] = useState([]);
+    const [sameRoll, setSameRoll] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newStudent = { ...student, id: new Date().getTime().toString() };
-        setStudentList([...studentList, newStudent]);
-        console.log(newStudent);
+        let sameRoll = studentList.some((item) => item.roll === student.roll);
+        setSameRoll(sameRoll);
+        if (!sameRoll) {
+            const newStudent = {
+                ...student,
+                id: new Date().getTime().toString()
+            };
+            setStudentList([...studentList, newStudent]);
+            setStudent({
+                name: "",
+                roll: "",
+                inTime: "00:00",
+                outTime: "00:00"
+            });
+        }
+    };
+
+    const handleCancel = () => {
         setStudent({ name: "", roll: "", inTime: "00:00", outTime: "00:00" });
+        setSameRoll(false);
     };
 
     return (
         <div>
             <div className="top-heading">Attendance: Class XIA</div>
+            {sameRoll && <div>Same Roll No. already exist</div>}
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
                     <input
@@ -67,7 +86,30 @@ const Attendance = () => {
                             }
                         />
                     </div>
-                    <button type="submit">Submit</button>
+                    <input
+                        type="radio"
+                        id="P"
+                        value="P"
+                        onChange={(e) =>
+                            setStudent({ ...student, status: e.target.value })
+                        }
+                        checked={student.status === "P"}
+                    />
+                    <label htmlFor="P">P</label>
+                    <input
+                        type="radio"
+                        id="A"
+                        value="A"
+                        onChange={(e) =>
+                            setStudent({ ...student, status: e.target.value })
+                        }
+                        checked={student.status === "A"}
+                    />
+                    <label htmlFor="A">A</label>
+                    <button type="submit">Take Attendance</button>
+                    <button type="reset" onClick={handleCancel}>
+                        Cancel
+                    </button>
                 </form>
             </div>
         </div>
